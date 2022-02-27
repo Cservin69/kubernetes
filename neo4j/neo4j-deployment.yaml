@@ -26,16 +26,16 @@ spec:
             - "/bin/sh"
             - "-c"
             - |
-              curl -L https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/4.4.4/apoc-4.4.4-all.jar -O
-              curl -L https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/4.4.4/graph-algorithms-algo-4.4.4.jar -O
-              cp -R apoc-3.5.0.6-all.jar /plugins
-              cp -R graph-algorithms-algo-4.4.4.jar /plugins
+              curl -L https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/4.4.0.3/apoc-4.4.0.3-all.jar -O
+#              curl -L https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/4.4.0.3/apoc-4.4.0.3-core.jar -O
+              cp -R apoc-4.4.0.3-all.jar /plugins
+#              cp -R graph-algorithms-algo-4.4.4.jar /plugins
       containers:
-      - image: neo4j:4.4.4 ## Image Name
+      - image: neo4j:4.4.0.3 ## Image Name
         name: neo4j ## Name of container
         env: ## Env variables to pass
-          - name: NEO4J_dbms_security_procedures_unrestricted
-            value: "algo.*"
+#          - name: NEO4J_dbms_security_procedures_unrestricted
+#            value: "algo.*"
           - name: NEO4J_dbms_directories_plugins
             value: "plugins"
         ports: ## Ports to map
